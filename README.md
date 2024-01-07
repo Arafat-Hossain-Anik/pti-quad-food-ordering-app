@@ -32,6 +32,6 @@ Now, this `build` folder can be deploy directly into any deployment server like 
 * Popular Product Section
 * Recommended Product Section
 * Footer<br/>
-Products data has been fetched from an api and has been served to `Popular` and `Recommended` section through `Context Api`. Also, external data adding option has been integrated<br/>
-Finally this has been deploy to `Netliy`. Website Live Link: [https://pti-quad-technical.netlify.app/](https://pti-quad-technical.netlify.app/)
+<p>Products data has been fetched from an api and has been served to `Popular` and `Recommended` section through `Context Api`. Also, external data adding option has been integrated<br/>
+Finally this has been deploy to `Netliy`. Website Live Link: [https://pti-quad-technical.netlify.app/](https://pti-quad-technical.netlify.app/)</p>
 ## Thank You
