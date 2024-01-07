@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SingleData from './SingleData';
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import DataForm from '../AddData/DataForm';
@@ -8,7 +8,31 @@ const Popular = () => {
     const { error, foods } = useProductsContext();
     const allFoods = foods?.Items?.filter((food) => food.IsPopular === true);
     const [currentPage, setCurrentPage] = useState(1);
-    const cardsPerPage = 5;
+    const [windowWidth, setWindowWidth] = useState([window.innerWidth]);
+    const [cardsPerPage, setCardsPerPage] = useState(5);
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWindowWidth([window.innerWidth]);
+        };
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
+    useEffect(() => {
+        if (windowWidth[0] <= 375) {
+            setCardsPerPage(2);
+        }
+        else if (windowWidth[0] <= 640) {
+            setCardsPerPage(3);
+        }
+        else {
+            setCardsPerPage(5);
+        }
+    }, [windowWidth]);
+    console.log(windowWidth[0]);
     const indexOfLastCard = currentPage * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = allFoods?.slice(indexOfFirstCard, indexOfLastCard);
@@ -33,7 +57,7 @@ const Popular = () => {
                     <button onClick={() => handlePageChange('forward')} disabled={indexOfLastCard >= allFoods?.length}><IoChevronForwardOutline /></button>
                 </div>
             </div>
-            <div className="d-flex flex-wrap justify-content-center justify-content-md-start">
+            <div className="d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-md-start g-2">
                 {
                     error ? <h1>Fetching Failed Due to an internel error</h1> :
                         currentCards?.map((food, Id) => <SingleData key={Id} food={food} section={"popular"}></SingleData>)

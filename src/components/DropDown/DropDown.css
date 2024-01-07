@@ -9,10 +9,11 @@
     border-radius: 5px;
     position: absolute;
     display: none;
+    z-index: 1;
 }
 
 .dropdown-btn {
-    padding: 10px 25px;
+    padding: 15% 5%;
     background: #fff;
     border-radius: 5px;
 }
@@ -32,16 +33,6 @@
 
 @media only screen and (max-width: 640px) {
     .dropdown-content {
-        margin: 10px -45px;
-    }
-
-    .dropdown-btn {
-        padding: 10px 15px;
-        background: #fff;
-        border-radius: 5px;
-    }
-
-    .dropdown-item {
-        padding: 10px 25px;
+        margin: 10px -80px;
     }
 }

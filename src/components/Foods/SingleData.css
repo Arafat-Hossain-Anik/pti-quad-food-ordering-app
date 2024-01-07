@@ -3,14 +3,36 @@
 }
 
 .card-data-container {
-    width: 220px;
+    width: 205px;
     height: 300px;
     overflow: hidden;
 }
 
 .card-image {
-    width: 220px;
+    width: 100%;
     height: 250px;
     border-radius: 10px;
     object-fit: cover;
+}
+
+@media only screen and (max-width: 640px) {
+    .card-data-container {
+        width: 120px;
+        height: 220px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .card-data-container {
+        width: 120px;
+        height: 220px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
 }

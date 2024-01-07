@@ -76,3 +76,31 @@ xl: Extra-large screens (≥ 1280px) */
         color: #fff;
     }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1020px) {
+    .footer-image {
+        height: 15rem !important;
+    }
+
+    .input-field {
+        border-radius: 20px;
+        width: 60vw;
+        margin: 0 2vw;
+    }
+
+    .subscribe-btn {
+        right: 20px;
+        top: 4px;
+    }
+
+    .copyright-icon-container {
+        text-align: center;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .footer-icon {
+        background-color: #f9661c;
+        color: #fff;
+    }
+}

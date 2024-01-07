@@ -11,8 +11,8 @@ const DropDown = () => {
     };
     return (
         <div className="dropdown-container">
-            <button onClick={toggleDropdown} className='dropdown-btn'>
-                Menu {isOpen ? <MdKeyboardArrowDown className='primary-color inline-block text-xl' /> : <MdKeyboardArrowUp className='primary-color inline-block text-xl' />}
+            <button onClick={toggleDropdown} className='dropdown-btn d-flex align-items-center'>
+                <span className='btn-text font-semibold'>MENU</span> {isOpen ? <MdKeyboardArrowDown className='primary-color text-xl' /> : <MdKeyboardArrowUp className='primary-color text-xl' />}
             </button>
             <ul className={`dropdown-content ${isOpen ? "show" : ""}`}>
                 <li><Link className="dropdown-item" to='/' type="button">Home</Link></li>

@@ -13,7 +13,7 @@ const Footer = () => {
                     <input type="text" className="input-field" placeholder="Enter Your E-mail" />
                     <button className="subscribe-btn">Subscribe <GoArrowRight className='inline-block text-xl' /></button>
                 </div>
-                <div className='d-flex copyright-icon-container align-items-end justify-content-between'>
+                <div className='d-flex copyright-icon-container justify-content-between'>
                     <div className='copyright-container'>
                         <h2 className='text-2xl font-bold'>pti <span className='primary-color'>.</span></h2>
                         <p className='font-medium'>Copyright &copy; Tripp. All right reserved</p>

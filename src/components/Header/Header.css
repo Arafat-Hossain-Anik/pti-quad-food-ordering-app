@@ -1,4 +1,12 @@
+.header-padding {
+    padding-top: 4rem;
+}
+
 @media only screen and (max-width: 640px) {
+    .header-padding {
+        padding-top: 2rem;
+    }
+
     .header-container {
         flex-direction: column;
         background-color: transparent;
@@ -8,11 +16,12 @@
         background-color: transparent;
         text-align: center;
         padding-top: 0;
+        margin-bottom: 6rem;
     }
 
     .header-text-container h1 {
         color: black;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .header-text-container h6 {
@@ -24,9 +33,22 @@
         margin: 0 auto;
         border-radius: 20px;
         margin: 0 10px;
+        position: relative;
+        height: 200px;
     }
 
     .header-image-container img {
-        height: 275px !important;
+        height: 300px !important;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: -100px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1020px) {
+    .header-image-container img {
+        height: 270px !important;
+        width: 100%;
     }
 }
