@@ -10,6 +10,7 @@ const Recommended = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [windowWidth, setWindowWidth] = useState([window.innerWidth]);
     const [cardsPerPage, setCardsPerPage] = useState(5);
+    //  getting windowWidth
     useEffect(() => {
         const handleWindowResize = () => {
             setWindowWidth([window.innerWidth]);
@@ -21,6 +22,7 @@ const Recommended = () => {
             window.removeEventListener('resize', handleWindowResize);
         };
     }, []);
+    // set cards number base on windowWidth
     useEffect(() => {
 
         if (windowWidth[0] <= 375) {
@@ -33,7 +35,7 @@ const Recommended = () => {
             setCardsPerPage(5);
         }
     }, [windowWidth]);
-    // Calculate the indexes of the cards to be displayed on the current page
+    // Calculate the indexes of the cards
     const indexOfLastCard = currentPage * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = allFoods?.slice(indexOfFirstCard, indexOfLastCard);
@@ -56,6 +58,7 @@ const Recommended = () => {
                     <button onClick={() => handlePageChange('forward')} disabled={indexOfLastCard >= allFoods?.length}><IoChevronForwardOutline /></button>
                 </div>
             </div>
+            {/* mapping data */}
             <div className="d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-md-start">
                 {
                     error ? <h1>Fetching Failed Due to an internel error</h1> :

@@ -10,6 +10,7 @@ const Popular = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [windowWidth, setWindowWidth] = useState([window.innerWidth]);
     const [cardsPerPage, setCardsPerPage] = useState(5);
+    //  getting windowWidth
     useEffect(() => {
         const handleWindowResize = () => {
             setWindowWidth([window.innerWidth]);
@@ -21,6 +22,7 @@ const Popular = () => {
             window.removeEventListener('resize', handleWindowResize);
         };
     }, []);
+    // set cards number base on windowWidth
     useEffect(() => {
         if (windowWidth[0] <= 375) {
             setCardsPerPage(2);
@@ -32,11 +34,11 @@ const Popular = () => {
             setCardsPerPage(5);
         }
     }, [windowWidth]);
-    console.log(windowWidth[0]);
+    // get pagination cards index
     const indexOfLastCard = currentPage * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = allFoods?.slice(indexOfFirstCard, indexOfLastCard);
-    console.log(indexOfFirstCard, indexOfLastCard);
+    // pagination function
     const handlePageChange = (direction) => {
         if (direction === 'forward') {
             setCurrentPage((prevPage) => prevPage + 1);
@@ -57,6 +59,7 @@ const Popular = () => {
                     <button onClick={() => handlePageChange('forward')} disabled={indexOfLastCard >= allFoods?.length}><IoChevronForwardOutline /></button>
                 </div>
             </div>
+            {/* mapping data */}
             <div className="d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-md-start g-2">
                 {
                     error ? <h1>Fetching Failed Due to an internel error</h1> :
