@@ -5,7 +5,7 @@ const useFetchData = () => {
     const [error, setError] = useState("");
     // Fetch data from https redirect link
     useEffect(() => {
-        fetch('/api/Item?page=1&pageSize=10')
+        fetch('https://pti-quad-technical.netlify.app/api/Item?page=1&pageSize=10')
             .then(res => res.json())
             .then(data => setFoods(data))
             .catch(error => setError(error))
