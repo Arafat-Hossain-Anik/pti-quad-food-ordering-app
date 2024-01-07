@@ -4,7 +4,7 @@ export const ProductsContext = createContext();
 
 const ProductsProvider = ({ children }) => {
     const contextData = useFetchData();
-    console.log(contextData);
+
     return (
         <ProductsContext.Provider value={contextData}>
             {children}

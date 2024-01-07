@@ -39,7 +39,6 @@ const Recommended = () => {
     const indexOfLastCard = currentPage * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     const currentCards = allFoods?.slice(indexOfFirstCard, indexOfLastCard);
-    console.log(indexOfFirstCard, indexOfLastCard);
     // Change page
     const handlePageChange = (direction) => {
         if (direction === 'forward') {
